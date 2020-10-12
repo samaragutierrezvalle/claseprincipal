@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Operaciones {
+    static ArrayList ListaNumeros = new ArrayList();
+
+    public static void InsertarDatos(){
+        Scanner leer = new Scanner(System.in);
+        double valor =0;
+        System.out.println("Igresa el un dato a la lista ");
+        valor = leer.nextDouble();
+        ListaNumeros.add(valor);//Agreggamos Datos a la lista .add
+    }
+
+    public static void Leerlista (){
+        if (!ListaNumeros.isEmpty()){//Nos dira si la lista tiene elementos
+            System.out.println("Elementos de la lista");
+            for (int i = 0; i <ListaNumeros.size() ; i++) {//Imprimimos lista
+                System.out.println(ListaNumeros.get(i));
+            }
+        }else {
+            System.out.println("La lsita esta vacia");
+        }
+    }
+
+    public static void EliminarLista(){
+        Scanner leer = new Scanner(System.in);
+        double valor;
+        int posicion;
+
+        System.out.println("Inserte el valor que quiere eliminar");
+        valor = leer.nextDouble();
+
+        posicion = ListaNumeros.indexOf(valor);
+
+        if (posicion != -1){
+            ListaNumeros.remove(posicion);
+            System.out.println("Valor eliminado");
+        }else{
+            System.out.println("El valor no se encuentra en la lista");
+        }
+    }
+
+    public static void IngresarElemento(){
+        Scanner leer = new Scanner(System.in);
+        double valor;
+        int posicion;
+
+        System.out.println("Ingresa el valor a insertar");
+        valor = leer.nextDouble();
+
+        System.out.println("Ingresa la posicion donde se insertara");
+        posicion=leer.nextInt();
+        ListaNumeros.add(posicion,valor);
+    }
+
+
+}
